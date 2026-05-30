@@ -41,8 +41,8 @@ MemeFocus/
 Ensure you have Java 17+ and Maven installed. Set the database environment variables and run:
 ```bash
 cd backend
-$env:SPRING_DATASOURCE_URL="jdbc:postgresql://aws-1-ap-south-1.pooler.supabase.com:5432/postgres?sslmode=require"
-$env:SPRING_DATASOURCE_USERNAME="postgres.bjhbkwhjretlpjaqnvyx"
+$env:SPRING_DATASOURCE_URL="jdbc:postgresql://<your-supabase-host>:5432/postgres?sslmode=require"
+$env:SPRING_DATASOURCE_USERNAME="postgres.<your-project-ref>"
 $env:SPRING_DATASOURCE_PASSWORD="YOUR_DATABASE_PASSWORD"
 mvn spring-boot:run
 ```
