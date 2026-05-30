@@ -1,0 +1,159 @@
+.settings-page {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.settings-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 140px);
+  color: var(--text-secondary);
+}
+
+.settings-header h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+}
+
+.settings-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Alert box */
+.settings-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.settings-alert.success {
+  background-color: var(--accent-success-light);
+  color: var(--accent-success);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.settings-alert.error {
+  background-color: var(--accent-danger-light);
+  color: var(--accent-danger);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Layout */
+.settings-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.25rem;
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.settings-section.divider-top {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.inputs-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.inputs-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.save-btn {
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Danger zone card */
+.danger-zone-card {
+  border-color: var(--accent-danger-light);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: max-content;
+}
+
+.danger-title {
+  color: var(--accent-danger);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.danger-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.logout-action-btn, .delete-account-btn {
+  width: 100%;
+  padding: 0.65rem;
+  font-size: 0.9rem;
+}
+
+.delete-account-btn {
+  background-color: transparent;
+  color: var(--accent-danger);
+  border: 1px solid var(--accent-danger);
+}
+
+.delete-account-btn:hover {
+  background-color: var(--accent-danger);
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .inputs-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .settings-form {
+    padding: 1.5rem;
+  }
+}
