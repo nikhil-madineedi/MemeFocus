@@ -21,10 +21,6 @@ export default function LandingPage() {
               <span>{token ? "Go to Dashboard" : "Start Focusing Free"}</span>
               <ArrowRight size={18} />
             </Link>
-            <a href="/extension.zip" download className="btn btn-secondary btn-lg btn-download-hero">
-              <Download size={18} />
-              <span>Download Extension</span>
-            </a>
             <a href="#how-it-works" className="btn btn-secondary btn-lg">How It Works</a>
           </div>
         </div>
