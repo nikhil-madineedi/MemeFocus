@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Timer, CheckSquare, ShieldAlert, BarChart3, Laugh, ArrowRight } from 'lucide-react';
+import { Timer, CheckSquare, ShieldAlert, BarChart3, Laugh, ArrowRight, Download } from 'lucide-react';
 import './LandingPage.css';
 
 export default function LandingPage() {
@@ -21,6 +21,10 @@ export default function LandingPage() {
               <span>{token ? "Go to Dashboard" : "Start Focusing Free"}</span>
               <ArrowRight size={18} />
             </Link>
+            <a href="/extension.zip" download className="btn btn-secondary btn-lg btn-download-hero">
+              <Download size={18} />
+              <span>Download Extension</span>
+            </a>
             <a href="#how-it-works" className="btn btn-secondary btn-lg">How It Works</a>
           </div>
         </div>
@@ -86,6 +90,42 @@ export default function LandingPage() {
               <p>Embarrassed or amused, you close the tab and return to finishing your tasks!</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Extension Install Section */}
+      <section id="download-extension" className="extension-section">
+        <div className="extension-card-landing">
+          <h2 className="section-title">Get the Companion Blocker</h2>
+          <p className="extension-desc">
+            To enforce your focus sessions and redirect distracting sites to roasts, install our lightweight companion Chrome extension manually in under a minute.
+          </p>
+          <div className="extension-steps">
+            <div className="ext-step">
+              <span className="ext-num">1</span>
+              <p>Click the button below to download the extension as a <strong>ZIP file</strong>.</p>
+            </div>
+            <div className="ext-step">
+              <span className="ext-num">2</span>
+              <p>Extract (unzip) the downloaded file on your computer into a folder.</p>
+            </div>
+            <div className="ext-step">
+              <span className="ext-num">3</span>
+              <p>Open Google Chrome and navigate to <code>chrome://extensions</code>.</p>
+            </div>
+            <div className="ext-step">
+              <span className="ext-num">4</span>
+              <p>Toggle the <strong>Developer mode</strong> switch in the top-right corner.</p>
+            </div>
+            <div className="ext-step">
+              <span className="ext-num">5</span>
+              <p>Click the <strong>Load unpacked</strong> button in the top-left and select the extracted folder!</p>
+            </div>
+          </div>
+          <a href="/extension.zip" download className="btn btn-primary btn-lg extension-dl-btn">
+            <Download size={18} />
+            <span>Download Extension (.ZIP)</span>
+          </a>
         </div>
       </section>
     </div>
