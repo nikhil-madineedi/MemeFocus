@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Trash2, CheckSquare, Square, ClipboardList, Plus } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 import './TasksPage.css';
 
 export default function TasksPage() {
@@ -20,7 +21,7 @@ export default function TasksPage() {
 
     const fetchTasks = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/tasks', {
+        const response = await fetch(`${API_BASE_URL}/api/tasks`, {
           headers: {
             'X-Auth-Token': token
           }
@@ -48,7 +49,7 @@ export default function TasksPage() {
     if (!newTaskName.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:8080/api/tasks', {
+      const response = await fetch(`${API_BASE_URL}/api/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +74,7 @@ export default function TasksPage() {
   // Toggle Task Status (complete/active)
   const handleToggleTask = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/tasks/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'X-Auth-Token': token
@@ -94,7 +95,7 @@ export default function TasksPage() {
   // Delete Task
   const handleDeleteTask = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/tasks/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/tasks/${id}`, {
         method: 'DELETE',
         headers: {
           'X-Auth-Token': token

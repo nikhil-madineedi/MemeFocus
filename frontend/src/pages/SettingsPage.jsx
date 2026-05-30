@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Settings, LogOut, CheckCircle, AlertCircle } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 import './SettingsPage.css';
 
 export default function SettingsPage() {
@@ -24,7 +25,7 @@ export default function SettingsPage() {
 
     const fetchProfile = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/auth/profile', {
+        const response = await fetch(`${API_BASE_URL}/api/auth/profile`, {
           headers: {
             'X-Auth-Token': token
           }
@@ -56,7 +57,7 @@ export default function SettingsPage() {
     setMessage({ text: '', type: '' });
 
     try {
-      const response = await fetch('http://localhost:8080/api/auth/profile', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +89,7 @@ export default function SettingsPage() {
 
   const handleLogout = () => {
     if (token) {
-      fetch('http://localhost:8080/api/auth/logout', {
+      fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: 'POST',
         headers: { 'X-Auth-Token': token }
       }).catch(() => {});

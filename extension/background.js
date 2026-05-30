@@ -17,7 +17,7 @@ async function fetchBlockedWebsites() {
   }
   
   try {
-    const response = await fetch('http://localhost:8080/api/blocked-websites', {
+    const response = await fetch('https://memefocus-backend.onrender.com/api/blocked-websites', {
       headers: {
         'X-Auth-Token': sessionState.token
       }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { User, Flame, Clock, Calendar, CheckCircle2, ShieldPlus, Play } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 import './Dashboard.css';
 
 export default function Dashboard() {
@@ -26,9 +27,9 @@ export default function Dashboard() {
         const headers = { 'X-Auth-Token': token };
         
         const [profileRes, statsRes, activityRes] = await Promise.all([
-          fetch('http://localhost:8080/api/auth/profile', { headers }),
-          fetch('http://localhost:8080/api/focus/stats', { headers }),
-          fetch('http://localhost:8080/api/focus/activity', { headers })
+          fetch(`${API_BASE_URL}/api/auth/profile`, { headers }),
+          fetch(`${API_BASE_URL}/api/focus/stats`, { headers }),
+          fetch(`${API_BASE_URL}/api/focus/activity`, { headers })
         ]);
 
         if (profileRes.status === 401) {
@@ -61,7 +62,7 @@ export default function Dashboard() {
     if (!taskName.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:8080/api/tasks', {
+      const response = await fetch(`${API_BASE_URL}/api/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +89,7 @@ export default function Dashboard() {
     if (!websiteUrl.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:8080/api/blocked-websites', {
+      const response = await fetch(`${API_BASE_URL}/api/blocked-websites`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Play, Pause, RotateCcw, AlertTriangle, Coffee, Brain } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 import './TimerPage.css';
 
 export default function TimerPage() {
@@ -30,7 +31,7 @@ export default function TimerPage() {
         const headers = { 'X-Auth-Token': token };
         
         // Fetch profile to get default times
-        const profileRes = await fetch('http://localhost:8080/api/auth/profile', { headers });
+        const profileRes = await fetch(`${API_BASE_URL}/api/auth/profile`, { headers });
         if (profileRes.ok) {
           const profile = await profileRes.json();
           setFocusDuration(profile.defaultFocusDuration);
@@ -39,7 +40,7 @@ export default function TimerPage() {
         }
 
         // Fetch tasks
-        const tasksRes = await fetch('http://localhost:8080/api/tasks', { headers });
+        const tasksRes = await fetch(`${API_BASE_URL}/api/tasks`, { headers });
         if (tasksRes.ok) {
           const tasksData = await tasksRes.json();
           setTasks(tasksData.filter(t => !t.completed));
@@ -120,7 +121,7 @@ export default function TimerPage() {
       
       // Log session to backend
       try {
-        const response = await fetch('http://localhost:8080/api/focus', {
+        const response = await fetch(`${API_BASE_URL}/api/focus`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -132,7 +133,7 @@ export default function TimerPage() {
         if (response.ok) {
           // If task selected, complete it (optional feature)
           if (selectedTaskId) {
-            await fetch(`http://localhost:8080/api/tasks/${selectedTaskId}`, {
+            await fetch(`${API_BASE_URL}/api/tasks/${selectedTaskId}`, {
               method: 'PUT',
               headers: { 'X-Auth-Token': token }
             });

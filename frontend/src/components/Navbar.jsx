@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Target, LogOut, CheckSquare, ShieldAlert, Settings, LayoutDashboard, Timer } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -13,7 +14,7 @@ export default function Navbar() {
     // Call logout endpoint (fire-and-forget or sync)
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('http://localhost:8080/api/auth/logout', {
+      fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: 'POST',
         headers: {
           'X-Auth-Token': token

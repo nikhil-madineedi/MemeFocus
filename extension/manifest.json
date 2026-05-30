@@ -9,14 +9,19 @@
     "webNavigation"
   ],
   "host_permissions": [
-    "http://localhost:8080/*"
+    "http://localhost:8080/*",
+    "https://memefocus-backend.onrender.com/*"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["http://localhost:5173/*"],
+      "matches": [
+        "http://localhost:5173/*",
+        "https://*.vercel.app/*",
+        "https://*.onrender.com/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_start"
     }

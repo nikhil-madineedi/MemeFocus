@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ShieldCheck, ShieldAlert, Trash2, Plus, Globe } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 import './BlockedPage.css';
 
 export default function BlockedPage() {
@@ -21,7 +22,7 @@ export default function BlockedPage() {
 
     const fetchWebsites = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/blocked-websites', {
+        const response = await fetch(`${API_BASE_URL}/api/blocked-websites`, {
           headers: {
             'X-Auth-Token': token
           }
@@ -62,7 +63,7 @@ export default function BlockedPage() {
     if (!newUrl.trim()) return;
 
     try {
-      const response = await fetch('http://localhost:8080/api/blocked-websites', {
+      const response = await fetch(`${API_BASE_URL}/api/blocked-websites`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +89,7 @@ export default function BlockedPage() {
   // Handle remove website
   const handleRemoveWebsite = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/blocked-websites/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/blocked-websites/${id}`, {
         method: 'DELETE',
         headers: {
           'X-Auth-Token': token
