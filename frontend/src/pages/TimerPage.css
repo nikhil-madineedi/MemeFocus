@@ -1,0 +1,208 @@
+.timer-page {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.timer-wrapper {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Mode selector tabs */
+.mode-selector {
+  display: flex;
+  background-color: var(--border-color);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  gap: 4px;
+}
+
+.mode-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mode-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.mode-btn.active {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.mode-btn.active.focus-mode {
+  color: var(--primary);
+}
+
+.mode-btn.active.break-mode {
+  color: var(--accent-success);
+}
+
+/* Circular display card */
+.timer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border-width: 2px;
+}
+
+.timer-card.focus {
+  border-color: var(--primary-light);
+}
+
+.timer-card.break {
+  border-color: var(--accent-success-light);
+}
+
+.timer-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 6px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: var(--bg-primary);
+  transition: all var(--transition-normal);
+}
+
+.timer-card.focus .timer-circle {
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.1);
+}
+
+.timer-card.break .timer-circle {
+  border-color: var(--accent-success);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.timer-countdown {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.timer-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Controls */
+.timer-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.control-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.start-btn, .pause-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+}
+
+.start-btn:hover, .pause-btn:hover {
+  transform: scale(1.05);
+}
+
+.timer-card.break .start-btn, 
+.timer-card.break .pause-btn {
+  background-color: var(--accent-success);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+}
+
+.reset-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+}
+
+.reset-btn:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Tasks dropdown */
+.timer-task-card h3, .timer-settings-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.active-task-indicator {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary);
+}
+
+/* Settings adjustments inputs */
+.quick-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.quick-inputs .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.timer-lock-warning {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--accent-warning);
+}
