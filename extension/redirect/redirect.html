@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MemeFocus Blocked</title>
+  <link rel="stylesheet" href="redirect.css">
+</head>
+<body>
+  <div class="redirect-container fade-in">
+    <div class="header">
+      <div class="logo">MemeFocus</div>
+      <h1>Caught Red-Handed! 🛑</h1>
+    </div>
+
+    <!-- Roast Section -->
+    <div class="card roast-card">
+      <p id="roast-text">Wait, are you writing code or writing off your future? Get back to work!</p>
+    </div>
+
+    <!-- Meme Section -->
+    <div class="card meme-card">
+      <h3>Your Distraction Tax:</h3>
+      <div id="meme-container">
+        <p id="meme-loading">Loading fresh programmer humor...</p>
+        <img id="meme-image" style="display: none;" alt="Programmer humor meme">
+        <p id="meme-title" style="display: none;"></p>
+      </div>
+    </div>
+
+    <!-- Timer Section -->
+    <div class="card timer-card">
+      <p>Time remaining in current focus block:</p>
+      <div id="timer-display" class="timer-display">00:00</div>
+    </div>
+
+    <div class="actions">
+      <button id="close-tab" class="btn btn-danger">Close This Tab</button>
+    </div>
+  </div>
+  <script src="redirect.js"></script>
+</body>
+</html>
