@@ -38,12 +38,9 @@ MemeFocus/
 ## Quickstart Guide
 
 ### 1. Run the Backend (Spring Boot) Locally
-Ensure you have Java 17+ and Maven installed. Set the database environment variables and run:
+Ensure you have Java 17+ and Maven installed.
 ```bash
 cd backend
-$env:SPRING_DATASOURCE_URL="jdbc:postgresql://<your-supabase-host>:5432/postgres?sslmode=require"
-$env:SPRING_DATASOURCE_USERNAME="postgres.<your-project-ref>"
-$env:SPRING_DATASOURCE_PASSWORD="YOUR_DATABASE_PASSWORD"
 mvn spring-boot:run
 ```
 * **Local REST API**: `http://localhost:8080`
