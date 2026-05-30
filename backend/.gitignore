@@ -1,0 +1,15 @@
+# Maven build outputs
+target/
+
+# Embedded H2 Database storage files
+data/
+
+# IDE specific files
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.factorypath
+bin/
+.metadata/
