@@ -10,7 +10,7 @@
   ],
   "host_permissions": [
     "http://localhost:8080/*",
-    "https://memefocus-backend.onrender.com/*"
+    "https://memefocus.onrender.com/*"
   ],
   "background": {
     "service_worker": "background.js"
