@@ -187,13 +187,21 @@ export default function BlockedPage() {
               ) : (
                 <>
                   <div className="status-badge disconnected">Not Connected</div>
-                  <p>MemeFocus extension was not detected. Please install the extension locally in developer mode to start blocking websites.</p>
+                  <p>The MemeFocus extension is not active in your browser. Install the companion extension to enable website blocking.</p>
+                  
+                  <a href="/extension.zip" download className="btn btn-danger btn-sm download-ext-sidebar-btn" style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', margin: '1rem 0', textDecoration: 'none' }}>
+                    <Plus size={16} style={{ transform: 'rotate(45deg)' }} />
+                    <span>Download Extension (.ZIP)</span>
+                  </a>
+
                   <div className="install-instructions">
-                    <h4>How to load extension:</h4>
-                    <ol>
-                      <li>Go to <code>chrome://extensions</code> in Chrome.</li>
-                      <li>Enable <strong>Developer mode</strong> (toggle top right).</li>
-                      <li>Click <strong>Load unpacked</strong> and select the <code>extension</code> folder in this project root.</li>
+                    <h4>Installation Steps:</h4>
+                    <ol style={{ paddingLeft: '1.2rem', margin: '0.5rem 0', fontSize: '0.85rem', lineHeight: '1.4' }}>
+                      <li>Download the extension ZIP using the button above.</li>
+                      <li>Extract (unzip) the file into a folder on your computer.</li>
+                      <li>Go to <code>chrome://extensions</code> in your Chrome browser.</li>
+                      <li>Enable <strong>Developer mode</strong> (toggle switch in the top-right).</li>
+                      <li>Click <strong>Load unpacked</strong> (top-left) and select the extracted folder.</li>
                     </ol>
                   </div>
                 </>
