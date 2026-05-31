@@ -29,7 +29,7 @@ MemeFocus/
 ## Tech Stack & Architecture
 
 * **Backend**: Spring Boot 3.x, Hibernate JPA, PostgreSQL.
-* **Frontend**: React.js 18.x, React Router, Lucide Icons, Vanilla CSS (clean, light, and minimal UI with modular page-separated CSS).
+* **Frontend**: React.js 18.x, React Router, Lucide Icons, Vanilla CSS (clean, light, and minimal UI with modular page-separated CSS). Features a fully integrated distraction-free **Focus Player** with YouTube/Vimeo integration, auto-resume progress state, and custom CSS cinema/theater modes.
 * **Chrome Extension**: Vanilla JavaScript (Manifest V3, tab monitoring, tab redirect, and local custom redirect pages matching Vercel & Render).
 * **Database**: Cloud PostgreSQL database hosted on **Supabase**.
 
@@ -74,3 +74,4 @@ npm run dev
 4. **Run Timer**: Go to the **Timer** page, pick a task in the dropdown, and click **Start**.
 5. **Test Website Blocking**: While the timer is ticking down, open a new Chrome tab and visit the blocked website (e.g. `https://reddit.com`). The extension will instantly block navigation and redirect you to the Meme Redirect Page, showing you a countdown timer and a random developer meme!
 6. **Complete Session**: Once the focus timer runs out, a chime plays, the session is recorded on the backend, and your daily streak increases! Check your progress grid on the **Dashboard** page.
+7. **Use Focus Player**: Click **Focus Player** in the navigation bar. Paste a video URL (YouTube, Vimeo, or direct MP4 link). Use the player to take timeline-synchronized study notes (using keys like `Alt+N` or clicking the sync buttons). Click on note timestamps to seek the video, choose your layout (Split Screen, Theater, or Cinema Focus mode), and export your notes as Markdown format!

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Target, LogOut, CheckSquare, ShieldAlert, Settings, LayoutDashboard, Timer } from 'lucide-react';
+import { Target, LogOut, CheckSquare, ShieldAlert, Settings, LayoutDashboard, Timer, Tv } from 'lucide-react';
 import { API_BASE_URL } from '../config';
 import './Navbar.css';
 
@@ -47,6 +47,10 @@ export default function Navbar() {
               <Link to="/timer" className={`nav-link ${isActive('/timer')}`}>
                 <Timer size={18} />
                 <span>Timer</span>
+              </Link>
+              <Link to="/focus-player" className={`nav-link ${isActive('/focus-player')}`}>
+                <Tv size={18} />
+                <span>Focus Player</span>
               </Link>
               <Link to="/tasks" className={`nav-link ${isActive('/tasks')}`}>
                 <CheckSquare size={18} />

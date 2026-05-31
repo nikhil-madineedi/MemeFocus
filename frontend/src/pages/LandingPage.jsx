@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Timer, CheckSquare, ShieldAlert, BarChart3, Laugh, ArrowRight, Download } from 'lucide-react';
+import { Timer, CheckSquare, ShieldAlert, BarChart3, Laugh, ArrowRight, Download, Tv } from 'lucide-react';
 import './LandingPage.css';
 
 export default function LandingPage() {
@@ -55,6 +55,11 @@ export default function LandingPage() {
               <Laugh className="feature-icon text-orange" size={32} />
               <h3>Meme Redirects</h3>
               <p>Get instant redirects to humorous programmer memes and motivational roasts if you slither off track.</p>
+            </div>
+            <div className="feature-card card">
+              <Tv className="feature-icon text-indigo" size={32} />
+              <h3>Focus Player & Notes</h3>
+              <p>Watch YouTube or Vimeo lecture videos in a distraction-free layout with timeline-synchronized study notes.</p>
             </div>
           </div>
         </div>

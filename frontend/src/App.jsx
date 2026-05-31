@@ -10,6 +10,7 @@ import TimerPage from './pages/TimerPage';
 import TasksPage from './pages/TasksPage';
 import BlockedPage from './pages/BlockedPage';
 import SettingsPage from './pages/SettingsPage';
+import FocusPlayerPage from './pages/FocusPlayerPage';
 import './App.css';
 
 // Guard for protected routes
@@ -55,6 +56,11 @@ export default function App() {
             <Route path="/settings" element={
               <ProtectedRoute>
                 <SettingsPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/focus-player" element={
+              <ProtectedRoute>
+                <FocusPlayerPage />
               </ProtectedRoute>
             } />
 
